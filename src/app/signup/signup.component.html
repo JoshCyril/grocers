@@ -5,13 +5,16 @@
             <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label>UserName</label>
-                    <input type="text" formControlName="fname" class="form-control" [(ngModel)]="user.name"
-                    [ngClass]="{'is-invalid':submitted && form['fname'].errors}">
+                    <input type="text" formControlName="name" class="form-control" [(ngModel)]="user.name"
+                    [ngClass]="{'is-invalid':submitted && form['name'].errors}">
 
-                    <div *ngIf="submitted && form['fname'].errors" class="invalid-feedback">
-                        <div *ngIf="form['fname'].errors['required']">
+                    <div *ngIf="submitted && form['name'].errors" class="invalid-feedback">
+                        <div *ngIf="form['name'].errors['required']">
                             UserName cannot be Empty
                         </div>
+                    </div>
+                    <div *ngIf="isUserExist && forUser == 0">
+                        <span class="badge bg-danger">{{userExistMsg}}</span>
                     </div>
                 </div>
                 
@@ -25,6 +28,9 @@
                         </div>
                         <div *ngIf="form['email'].errors['email']">
                             Enter Valid EmailId
+                        </div>
+                        <div *ngIf="isUserExist && forUser == 1">
+                            <span class="badge bg-danger">{{userExistMsg}}</span>
                         </div>
                     </div>
                 </div>
