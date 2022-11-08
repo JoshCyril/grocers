@@ -43,9 +43,11 @@ export class LoginComponent implements OnInit {
         this.email = ''
       }
       this.service.loginUser(this.name, this.email, this.password).subscribe(x => {
-        console.log(x)
+        console.log(x, x._id, x.name)
+        localStorage.setItem('g_uid', x._id)
+        localStorage.setItem('g_uname', x.name)
       });
-      // this.router.navigate(['login']);
+      this.router.navigate(['home']);
     }
   }
 

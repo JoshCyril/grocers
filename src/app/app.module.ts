@@ -11,6 +11,7 @@ import { ModifyUsersComponent } from './modify-users/modify-users.component';
 import { ModifyProductsComponent } from './modify-products/modify-products.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SignupComponent } from './signup/signup.component';
     ModifyUsersComponent,
     ModifyProductsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
